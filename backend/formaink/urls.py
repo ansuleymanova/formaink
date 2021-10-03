@@ -10,7 +10,7 @@ urlpatterns = [
     path('api/v1/auth/', include('djoser.urls.authtoken')),
     path('api/v1/', include('djoser.urls')),
     path('api/v1/', include('users.urls')),
-    # path('api/vi/', include('surveys.urls')),
+    path('api/v1/', include('surveys.urls')),
 ]
 
 schema_view = get_schema_view(

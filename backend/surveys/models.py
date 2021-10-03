@@ -14,7 +14,9 @@ class Survey(models.Model):
     slug = models.SlugField(max_length=200,
                             unique=True,
                             )  # to prepopulate: ModelAdmin.prepopulated_fields
-    header_image = models.ImageField(upload_to='headers')
+    header_image = models.ImageField(upload_to='headers',
+                                     null=True,
+                                     blank=True)
     description = models.TextField()
     author = models.ForeignKey(User,
                                on_delete=models.CASCADE,
