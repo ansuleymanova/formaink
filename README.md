@@ -22,6 +22,10 @@ python manage.py migrate
 python manage.py collectstatic
 python manage.py loaddata fixtures.json
 ```
+
+in fixtures superuser credentials are admin@admin.com & "admin"
+
+
 From ```frontend``` folder run 
 
 ```
