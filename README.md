@@ -13,17 +13,18 @@ to ```package.json```.
 Then from ```backend``` folder run:
 
 ```
-python -m venv venv
+python3 -m venv venv
 source venv/bin/activate
-pip install -r requirements.txt
-python manage.py makemigrations users ... 
+pip3 install -r requirements.txt
+python3 manage.py makemigrations users ... 
 # (add all backend application names)
-python manage.py migrate
-python manage.py collectstatic
-python manage.py loaddata fixtures.json
+python3 manage.py migrate
+python3 manage.py collectstatic
+python3 manage.py loaddata fixtures.json
+python3 manage.py runserver
 ```
 
-in fixtures superuser credentials are admin@admin.com & "admin"
+in fixtures superuser credentials are admin@admin.com & admin
 
 
 From ```frontend``` folder run 
