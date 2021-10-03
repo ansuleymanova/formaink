@@ -9,17 +9,18 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/auth/', include('djoser.urls.authtoken')),
     path('api/v1/', include('djoser.urls')),
-    path('api/v1/', include('users.urls'))
+    path('api/v1/', include('users.urls')),
+    # path('api/vi/', include('surveys.urls')),
 ]
 
 schema_view = get_schema_view(
     openapi.Info(
-        title="Foodgram API",
+        title="forma.ink api",
         default_version='v1',
-        description="Документация для API проекта Foodgram",
+        description="Документация api для forma.ink",
         # terms_of_service="URL страницы с пользовательским соглашением",
-        contact=openapi.Contact(email="suleymanova.dev@gmail.com"),
-        license=openapi.License(name="BSD License"),
+        # contact=openapi.Contact(email="suleymanova.dev@gmail.com"),
+        # license=openapi.License(name="BSD License"),
         ),
     public=True,
     permission_classes=(permissions.AllowAny,),
