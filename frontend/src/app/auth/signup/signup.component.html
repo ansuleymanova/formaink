@@ -1,1 +1,61 @@
-<p>signup works!</p>
+<div class="flex flex-col">
+  <div class="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
+    <div class="bg-white px-6 py-8 rounded text-black w-full">
+      <h1 class="mb-8 text-3xl text-center text-gray-700 font-monsterrat font-bold font-rubik">Регистрация</h1>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+        <input
+          id="firstName"
+          type="text"
+          formControlName="first_name"
+          class="font-body block border border-gray-300 w-full p-3 rounded-sm mb-4"
+          name="firstName"
+          placeholder="Имя" />
+
+        <input
+          id="lastName"
+          type="text"
+          formControlName="last_name"
+          class="font-body block border border-gray-300 w-full p-3 rounded-sm mb-4"
+          name="lastName"
+          placeholder="Фамилия" />
+
+        <input
+          id="email"
+          formControlName="email"
+          type="text"
+          class="font-body block border border-gray-300 w-full p-3 rounded-sm mb-4"
+          name="email"
+          placeholder="Почта" />
+
+        <input
+          id="password"
+          formControlName="password"
+          type="password"
+          class="font-body block border border-gray-300 w-full p-3 rounded-sm mb-4"
+          name="password"
+          placeholder="Пароль" />
+
+        <button
+          type="submit"
+          class="font-monsterrat font-medium text-gray-200 text-2xl w-full text-center py-3 rounded-sm bg-purple-700 text-white
+               hover:bg-purple-900 focus:outline-none my-1"
+        >Создать аккаунт
+        </button>
+
+        <div class="text-center font-body text-sm text-grey-dark mt-4">
+          Создавая аккаунт вы соглашетесь с нашей
+          <a class="no-underline border-b border-grey-dark text-grey-dark" href="#">
+            Политикой в отношении обработки персональных данных
+          </a>
+        </div>
+      </form>
+    </div>
+
+    <div class="text-grey-dark font-monsterrat font-medium text-l mt-6">
+      Уже создавали аккаунт раньше?
+      <a class="no-underline border-b border-blue hover:text-purple-800" href="../login/">
+        Войти
+      </a>
+    </div>
+  </div>

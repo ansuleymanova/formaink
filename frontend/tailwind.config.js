@@ -10,6 +10,13 @@ module.exports = {
     },
     darkMode: 'class', // or 'media' or 'class'
     theme: {
+      fontFamily: {
+        'display': ['"Old Standard TT"', 'serif'],
+        'body': ['"PT Sans"', 'sans-serif'],
+        'inter': ['Inter', 'sans-serif'],
+        'rubik': ['Rubik', 'sans-serif'],
+        'monsterrat': ['Montserrat', 'sans-serif']
+      },
       extend: {},
     },
     variants: {
