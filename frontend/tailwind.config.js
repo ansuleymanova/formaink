@@ -23,6 +23,7 @@ module.exports = {
       extend: {
         backgroundColor: ['active'],
         opacity: ['disabled'],
+        borderColor: ['active']
       },
     },
     plugins: [require('@tailwindcss/aspect-ratio'),require('@tailwindcss/forms'),require('@tailwindcss/line-clamp'),require('@tailwindcss/typography')],

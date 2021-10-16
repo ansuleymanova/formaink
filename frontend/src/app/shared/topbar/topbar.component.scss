@@ -1,0 +1,35 @@
+.topnav {
+  background-color: #1c1b21;
+  overflow: hidden;
+  height: 56px;
+  position: absolute;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 56px;
+  padding-right: 56px;
+}
+.topnav__product {
+  display: flex;
+  gap: 28px;
+}
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #294dd0;
+  color: white;
+}

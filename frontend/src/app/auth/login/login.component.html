@@ -1,13 +1,12 @@
-<div class="flex flex-col">
-  <div class="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
-    <div class="bg-white px-6 py-8 rounded text-black w-full">
-      <h1 class="mb-8 text-3xl text-center font-monsterrat font-medium">Войти</h1>
-      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+<div class="signin-form__container">
+  <div class="signin-form">
+      <h1 class="signin-form__header">Войти</h1>
+      <form class="d-flex signin-form__content" [formGroup]="form" (ngSubmit)="onSubmit()">
       <input
         type="text"
         id="email"
         formControlName="email"
-        class="font-body block border border-gray-300 w-full p-3 rounded-sm mb-4"
+        class="signin-form__input"
         name="email"
         placeholder="Почта" />
 
@@ -15,21 +14,21 @@
         type="password"
         id="password"
         formControlName="password"
-        class="font-body block border border-gray-300 w-full p-3 rounded-sm mb-4"
+        class="signin-form__input"
         name="password"
         placeholder="Пароль" />
 
       <button
         type="submit"
-        class="cursor-pointer font-display text-2xl w-full text-center py-3 rounded-sm bg-purple-700 text-white
-               hover:bg-purple-900 focus:outline-none my-1"
-      >Войти
+        class="signin-form__button">
+        Войти
       </button>
       </form>
-    <div class="text-grey-dark font-display text-xl mt-6">
+    <div class="signin-form__warning">
       Не создавали аккаунт раньше?
-      <a class="no-underline border-b border-blue hover:text-purple-800" href="../login/">
+      <a class="no-underline border-b border-blue hover:text-purple-800" routerLink="/auth/signup">
         Зарегистрироваться
       </a>
     </div>
   </div>
+</div>
