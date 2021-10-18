@@ -1,0 +1,18 @@
+@import '/src/styles.scss';
+
+.sidebar {
+  display: flex;
+  gap: 14px;
+}
+
+.h2 {
+  font-family: $mnt;
+  font-weight: 500;
+  font-size: 16px;
+  box-shadow: 0 1px 0 #212221;
+  &:hover {
+    box-shadow: 0 2px 0 #212221;
+
+  }
+
+}

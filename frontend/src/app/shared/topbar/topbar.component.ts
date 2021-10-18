@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from "../../models/user";
+import { AuthService } from "../../auth/auth.service";
 
 @Component({
   selector: 'app-topbar',
@@ -6,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./topbar.component.scss']
 })
 export class TopbarComponent implements OnInit {
+  user: User | null;
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(private authService: AuthService) {
+    this.authService.currentUser$.subscribe(x => this.user = x);
   }
+  logout() {
+    return this.authService.logout()
+  }
+  ngOnInit(): void { }
 
 }

@@ -1,4 +1,15 @@
 /* https://github.com/csstools/sanitize.css/blob/main/typography.css */
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;900&family=JetBrains+Mono:wght@300;400&display=swap');
+
+$pt: 'PT Sans', sans-serif;
+$ptc: 'PT Sans Caption', sans-serif;
+$mnt: 'Montserrat', sans-serif;
+$int: 'Inter', sans-serif;
+$jbm: 'JetBrains Mono', monospace;
 
 html {
   font-family:

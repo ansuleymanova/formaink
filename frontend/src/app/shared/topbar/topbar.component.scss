@@ -1,35 +1,49 @@
+@import 'src/styles';
+
 .topnav {
-  background-color: #1c1b21;
+  background-color: $ivory-1;
   overflow: hidden;
-  height: 56px;
   position: absolute;
+  height: 44px;
   width: 100vw;
+  font-size: 14px;
+  padding-left: 14px;
+  padding-right: 14px;
   display: flex;
   justify-content: space-between;
-  padding-left: 56px;
-  padding-right: 56px;
+  border-bottom: 1px solid #212221;
+  top: 0;
 }
+
 .topnav__product {
+  a {
+    font-family: $jbm !important;
+  }
+}
+
+.topnav__product,
+.topnav__user {
   display: flex;
-  gap: 28px;
+  //align-items: center;
+  gap: 10px;
 }
+
 .topnav a {
+  padding-top: 12px;
+  font-family: $mnt;
+  font-weight: normal;
   float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
+  color: #222222;
   text-decoration: none;
-  font-size: 17px;
+  height: fit-content;
+  //cursor: pointer;
+
+  &:hover {
+    border-bottom: 2px solid #222;
+    transition: all 0.1s ease-out;
+  }
 }
 
-/* Change the color of links on hover */
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-/* Add a color to the active/current link */
-.topnav a.active {
-  background-color: #294dd0;
-  color: white;
+.topnav__active {
+  border-bottom: 2px solid #222;
 }

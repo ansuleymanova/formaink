@@ -10,13 +10,15 @@ import { HomeComponent } from "./home/home.component";
 import { TopbarComponent } from './shared/topbar/topbar.component';
 import { AlertComponent } from './shared/alert/alert.component';
 import { AuthModule } from "./auth/auth.module";
+import { InputComponent } from './shared/input/input.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     TopbarComponent,
-    AlertComponent
+    AlertComponent,
+    InputComponent
   ],
   imports: [
     AppRoutingModule,

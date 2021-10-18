@@ -1,6 +1,8 @@
 <div class="signin-form__container">
   <div class="signin-form">
-      <h1 class="signin-form__header">Войти</h1>
+    <h1 class="signin-form__header">Мы рады снова вас видеть</h1>
+
+
       <form class="d-flex signin-form__content" [formGroup]="form" (ngSubmit)="onSubmit()">
       <input
         type="text"
@@ -26,7 +28,7 @@
       </form>
     <div class="signin-form__warning">
       Не создавали аккаунт раньше?
-      <a class="no-underline border-b border-blue hover:text-purple-800" routerLink="/auth/signup">
+      <a class="no-underline border-b border-blue hover:text-purple-800" [routerLink]="'/auth/signup'">
         Зарегистрироваться
       </a>
     </div>

@@ -1,10 +1,13 @@
 <div class="topnav">
   <div class="topnav__product">
-  <a class="active" href="#">Home</a>
-  <a href="#">News</a>
+    <a class="active" href="#">Форма</a>
   </div>
-  <div class="topnav__user">
-  <a href="#">Contact</a>
-  <a href="#">About</a>
+  <div *ngIf="!user" class="topnav__user">
+    <a routerLink="auth/login" [routerLinkActive]="'topnav__active'">Войти</a>
+    <a routerLink="auth/signup" [routerLinkActive]="'topnav__active'">Зарегистрироваться</a>
+  </div>
+  <div *ngIf="user">
+    <a (click)="logout()">Выйти</a>
   </div>
 </div>
+
