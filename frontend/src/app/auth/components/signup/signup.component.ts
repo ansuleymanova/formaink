@@ -1,68 +1,66 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
-import { AlertService } from "../../shared/alert/alert.service";
 import { AuthService } from "../auth.service";
+import { AlertService } from "../../library/alert/alert.service";
 import { first } from "rxjs/operators";
 
-
 @Component({
-  selector: 'app-login',
-  styleUrls: ['login.component.scss'],
-  templateUrl: './login.component.html',
+  selector: 'app-signup',
+  templateUrl: './signup.component.html',
+  styleUrls: ['signup.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class SignupComponent implements OnInit {
   form: FormGroup;
   loading = false;
   submitted = false;
-  returnUrl: string;
-
   constructor(
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
     private router: Router,
     private authService: AuthService,
     private alertService: AlertService
-  ) {
-
-    if (this.authService.currentUserValue) {
-      this.router.navigate(['/'])
-    }
-  }
+  ) { }
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
+      first_name: ['', Validators.required],
+      last_name: ['', Validators.required],
       email: ['', Validators.required],
-      password: ['', Validators.required]
+      password: ['', [Validators.required, Validators.minLength(6)]]
     });
-
-    // this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
-    // console.log(this.returnUrl)
   }
 
   // convenience getter for easy access to form fields
   get f() { return this.form.controls }
 
   onSubmit() {
+    console.log(this.form.value)
     this.submitted = true;
+    let formSubmitValue = { ...this.form.value, username: this.form.value.email}
+
+    // reset alerts on submit
     this.alertService.clear();
 
+    // stop here if form is invalid
     if (this.form.invalid) {
-      console.log('error')
+      console.log(this.form.value)
+      console.log('form is invalid')
       return;
     }
 
     this.loading = true;
-    this.authService.login(this.f.email.value, this.f.password.value)
+    this.authService.register(formSubmitValue)
       .pipe(first())
-      .subscribe(
-        data => {
-          this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
-          this.router.navigateByUrl(this.returnUrl);
+      .subscribe({
+        next: () => {
+          // this.alertService.success('Registration successful', { keepAfterRouteChange: true });
+          this.router.navigate(['login'], { relativeTo: this.route });
         },
-        error => {
+        error: error => {
           this.alertService.error(error);
           this.loading = false;
-        });
+        }
+      });
   }
 }

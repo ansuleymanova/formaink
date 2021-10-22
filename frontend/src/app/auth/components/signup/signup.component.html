@@ -1,43 +1,42 @@
 <div class="signin-form__container">
   <div class="signin-form">
     <h1 class="signin-form__header">Регистрация</h1>
-    <form class="d-flex" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <form (ngSubmit)="onSubmit()" [formGroup]="form" class="d-flex">
       <input
-        id="firstName"
-        type="text"
+        class="signin-form__input"
         formControlName="first_name"
-        class="signin-form__input"
+        id="firstName"
         name="firstName"
-        placeholder="Имя" />
+        placeholder="Имя"
+        type="text"/>
 
       <input
-        id="lastName"
-        type="text"
+        class="signin-form__input"
         formControlName="last_name"
-        class="signin-form__input"
+        id="lastName"
         name="lastName"
-        placeholder="Фамилия" />
+        placeholder="Фамилия"
+        type="text"/>
 
       <input
-        id="email"
+        class="signin-form__input"
         formControlName="email"
-        type="text"
-        class="signin-form__input"
+        id="email"
         name="email"
-        placeholder="Почта" />
+        placeholder="Почта"
+        type="text"/>
 
       <input
-        id="password"
-        formControlName="password"
-        type="password"
         class="signin-form__input"
+        formControlName="password"
+        id="password"
         name="password"
-        placeholder="Пароль" />
+        placeholder="Пароль"
+        type="password"/>
 
       <button
+        class="signin-form__button hover:bg-blue-400 hover:text-gray-800 focus:outline-none my-1"
         type="submit"
-        class="signin-form__button
-               hover:bg-blue-400 hover:text-gray-800 focus:outline-none my-1"
       >Создать аккаунт
       </button>
 

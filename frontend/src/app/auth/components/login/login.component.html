@@ -1,16 +1,14 @@
 <div class="signin-form__container">
   <div class="signin-form">
     <h1 class="signin-form__header">Мы рады снова вас видеть</h1>
-
-
-      <form class="d-flex signin-form__content" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <form class="d-flex signin-form__content" [formGroup]="form" (ngSubmit)="onSubmit()">
       <input
         type="text"
         id="email"
         formControlName="email"
         class="signin-form__input"
         name="email"
-        placeholder="Почта" />
+        placeholder="Почта"/>
 
       <input
         type="password"
@@ -18,14 +16,14 @@
         formControlName="password"
         class="signin-form__input"
         name="password"
-        placeholder="Пароль" />
+        placeholder="Пароль"/>
 
       <button
         type="submit"
         class="signin-form__button">
         Войти
       </button>
-      </form>
+    </form>
     <div class="signin-form__warning">
       Не создавали аккаунт раньше?
       <a class="no-underline border-b border-blue hover:text-purple-800" [routerLink]="'/auth/signup'">
