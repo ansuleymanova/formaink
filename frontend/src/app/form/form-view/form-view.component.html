@@ -1,1 +1,7 @@
-<p>form-view works!</p>
+<p>Ваши формы</p>
+<div class="form-list">
+  <div class="form-card" *ngFor="let form of forms | async">
+    <h2 class="form-title">{{form.title}}</h2>
+    <p class="form-description">{{form.description}}</p>
+  </div>
+</div>

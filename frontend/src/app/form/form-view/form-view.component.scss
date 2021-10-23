@@ -1,0 +1,32 @@
+@import '../../../styles.scss';
+
+.form-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 24px;
+}
+
+.form-card {
+    padding: 0 16px;
+    width: 375px;
+    height: 175px;
+    border: solid 1px #212221;
+    border-radius: 4px;
+    &:active,
+    &:hover {
+      outline: 2px solid #212221;
+      cursor: pointer;
+    }
+}
+
+.form-title {
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
+.form-description {
+    font-size: 14px;
+    font-family: 'PT Sans', sans-serif;
+}

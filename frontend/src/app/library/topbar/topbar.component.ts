@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from "../../models/user";
-import { AuthService } from "../../auth/auth.service";
+import { AuthService } from "../../auth/helpers/auth.service";
 
 @Component({
   selector: 'app-topbar',

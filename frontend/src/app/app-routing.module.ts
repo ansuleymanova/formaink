@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from "./home/home.component";
-import { AppComponent } from "./app.component";
-import { AuthGuard } from "./auth/auth.guard";
+import { AuthGuard } from "./auth/helpers/auth.guard";
 
 const authModule = () => import('./auth/auth.module').then(x => x.AuthModule)
 

@@ -1,18 +1,26 @@
 @import '/src/styles.scss';
 
 .sidebar {
+  padding: 0 32px;
   display: flex;
-  gap: 14px;
+  flex: 1;
+  gap: 28px;
+  justify-content: center;
 }
 
 .h2 {
   font-family: $mnt;
   font-weight: 500;
   font-size: 16px;
+  width: max-content;
+  flex: 1;
   box-shadow: 0 1px 0 #212221;
+
   &:hover {
     box-shadow: 0 2px 0 #212221;
-
   }
+}
 
+.settings {
+  flex: 1;
 }
