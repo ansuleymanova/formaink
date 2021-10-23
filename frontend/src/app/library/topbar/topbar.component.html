@@ -4,10 +4,11 @@
   </div>
   <div *ngIf="!user" class="topnav__user">
     <a routerLink="auth/login" [routerLinkActive]="'topnav__active'">Войти</a>
-    <a routerLink="auth/signup" [routerLinkActive]="'topnav__active'">Зарегистрироваться</a>
+    <a routerLink="auth/signup" [routerLinkActive]="'topnav__active'"
+      >Зарегистрироваться</a
+    >
   </div>
   <div *ngIf="user">
     <a (click)="logout()">Выйти</a>
   </div>
 </div>
-

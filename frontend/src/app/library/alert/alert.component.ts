@@ -1,14 +1,14 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { Alert, AlertType } from "../../models/alert";
-import { Subscription } from "rxjs";
-import { HttpClient } from "@angular/common/http";
-import { NavigationStart, Router } from "@angular/router";
-import { AlertService } from "./alert.service";
+import { Alert, AlertType } from '../../models/alert';
+import { Subscription } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { NavigationStart, Router } from '@angular/router';
+import { AlertService } from './alert.service';
 
 @Component({
   selector: 'app-alert',
   templateUrl: './alert.component.html',
-  styleUrls: ['./alert.component.scss']
+  styleUrls: ['./alert.component.scss'],
 })
 export class AlertComponent implements OnInit, OnDestroy {
   @Input() id = 'default-alert';
@@ -21,15 +21,16 @@ export class AlertComponent implements OnInit, OnDestroy {
   constructor(
     private router: Router,
     private http: HttpClient,
-    private alertService: AlertService) {
-  }
+    private alertService: AlertService
+  ) {}
 
   ngOnInit(): void {
-    this.alertSubscription$ = this.alertService.onAlert(this.id)
-      .subscribe(alert => {
+    this.alertSubscription$ = this.alertService
+      .onAlert(this.id)
+      .subscribe((alert) => {
         if (!alert.message) {
-          this.alerts = this.alerts.filter(x => x.keepAfterRouteChange)
-          this.alerts.forEach(x => delete x.keepAfterRouteChange);
+          this.alerts = this.alerts.filter((x) => x.keepAfterRouteChange);
+          this.alerts.forEach((x) => delete x.keepAfterRouteChange);
           return;
         }
 
@@ -43,7 +44,7 @@ export class AlertComponent implements OnInit, OnDestroy {
       });
 
     // clear alerts on location change
-    this.routeSubscription$ = this.router.events.subscribe(event => {
+    this.routeSubscription$ = this.router.events.subscribe((event) => {
       if (event instanceof NavigationStart) {
         this.alertService.clear(this.id);
       }
@@ -66,11 +67,11 @@ export class AlertComponent implements OnInit, OnDestroy {
 
       // remove alert after faded out
       setTimeout(() => {
-        this.alerts = this.alerts.filter(x => x !== alert);
+        this.alerts = this.alerts.filter((x) => x !== alert);
       }, 250);
     } else {
       // remove alert
-      this.alerts = this.alerts.filter(x => x !== alert);
+      this.alerts = this.alerts.filter((x) => x !== alert);
     }
   }
 
@@ -83,8 +84,8 @@ export class AlertComponent implements OnInit, OnDestroy {
       [AlertType.Success]: 'alert alert-success',
       [AlertType.Error]: 'alert alert-danger',
       [AlertType.Info]: 'alert alert-info',
-      [AlertType.Warn]: 'alert alert-warning'
-    }
+      [AlertType.Warn]: 'alert alert-warning',
+    };
 
     classes.push(alertTypeClass[alert.type]);
 
@@ -95,4 +96,3 @@ export class AlertComponent implements OnInit, OnDestroy {
     return classes.join(' ');
   }
 }
-

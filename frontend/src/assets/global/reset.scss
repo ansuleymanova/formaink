@@ -47,7 +47,7 @@
 }
 
 :where(nav li)::before {
-  content: "\200B";
+  content: '\200B';
   float: left;
 }
 
@@ -97,7 +97,7 @@
   margin: 0;
 }
 
-:where(button, [type="button" i], [type="reset" i], [type="submit" i]) {
+:where(button, [type='button' i], [type='reset' i], [type='submit' i]) {
   -webkit-appearance: button;
 }
 
@@ -114,7 +114,7 @@
   resize: vertical; /* 3 */
 }
 
-:where([type="search" i]) {
+:where([type='search' i]) {
   -webkit-appearance: textfield; /* 1 */
   outline-offset: -2px; /* 2 */
 }
@@ -160,19 +160,19 @@
 /*  display: list-item;*/
 /*}*/
 
-:where([aria-busy="true" i]) {
+:where([aria-busy='true' i]) {
   cursor: progress;
 }
 
-:where([aria-disabled="true" i], [disabled]) {
+:where([aria-disabled='true' i], [disabled]) {
   cursor: not-allowed;
 }
 
-:where([aria-hidden="false" i][hidden]) {
+:where([aria-hidden='false' i][hidden]) {
   display: initial;
 }
 
-:where([aria-hidden="false" i][hidden]:not(:focus)) {
+:where([aria-hidden='false' i][hidden]:not(:focus)) {
   clip: rect(0, 0, 0, 0);
   position: absolute;
 }
