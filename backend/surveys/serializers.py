@@ -10,7 +10,7 @@ class SurveyListSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Survey
-        fields = ['title', 'slug', 'header_image',
+        fields = ['title', 'header_image',
                   'description', 'author', 'status']
 
 
@@ -19,7 +19,7 @@ class SurveyWriteSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Survey
-        fields = ['title', 'slug', 'header_image',
+        fields = ['title', 'header_image',
                   'description']
 
     @transaction.atomic

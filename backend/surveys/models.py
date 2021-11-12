@@ -11,9 +11,6 @@ class Survey(models.Model):
         (OPEN, 'Open'),
     ]
     title = models.CharField(max_length=300)
-    slug = models.SlugField(max_length=200,
-                            unique=True,
-                            )  # to prepopulate: ModelAdmin.prepopulated_fields
     header_image = models.ImageField(upload_to='headers',
                                      null=True,
                                      blank=True)

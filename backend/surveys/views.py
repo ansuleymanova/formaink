@@ -22,6 +22,9 @@ class SurveyViewSet(viewsets.ModelViewSet):
             return serializers.SurveyWriteSerializer
         return serializers.SurveyListSerializer
 
+    def __str__(self):
+        return self.text
+
 
 class QuestionViewSet(viewsets.ModelViewSet):
     queryset = models.Question.objects.all()
@@ -36,6 +39,9 @@ class QuestionViewSet(viewsets.ModelViewSet):
             return models.Question.objects.all()
         else:
             return models.Question.objects.filter(author=self.request.user)
+
+    def __str__(self):
+        return self.text
 
 
 # @api_view(['GET'])
