@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-import { environment } from '../../../environments/environment';
-import { User } from '../../models/user';
+import { environment } from '../../../../environments/environment';
+import { User } from '../../../models/user';
 import { FormService } from '../form.service';
 import { subscribeOn } from 'rxjs/operators';
 

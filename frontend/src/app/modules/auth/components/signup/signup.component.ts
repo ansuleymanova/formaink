@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AuthService } from '../../../core/services/auth.service';
-import { AlertService } from '../../../library/alert/alert.service';
+import { AuthService } from '../../../../core/services/auth.service';
 import { first } from 'rxjs/operators';
 
 @Component({
@@ -19,7 +18,6 @@ export class SignupComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private authService: AuthService,
-    private alertService: AlertService
   ) {}
 
   ngOnInit(): void {
@@ -44,8 +42,6 @@ export class SignupComponent implements OnInit {
       username: this.form.value.email,
     };
 
-    // reset alerts on submit
-    this.alertService.clear();
 
     // stop here if form is invalid
     if (this.form.invalid) {
@@ -64,7 +60,6 @@ export class SignupComponent implements OnInit {
           this.router.navigate(['login'], { relativeTo: this.route });
         },
         error: (error) => {
-          this.alertService.error(error);
           this.loading = false;
         },
       });
