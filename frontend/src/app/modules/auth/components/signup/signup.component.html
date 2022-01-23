@@ -1,0 +1,74 @@
+<div class="signin-form__container">
+  <div class="signin-form">
+    <h1 class="signin-form__header">Регистрация</h1>
+    <form (ngSubmit)="onSubmit()" [formGroup]="form" class="d-flex">
+      <input
+        class="signin-form__input"
+        formControlName="first_name"
+        id="firstName"
+        name="firstName"
+        placeholder="Имя"
+        type="text"
+      />
+
+      <input
+        class="signin-form__input"
+        formControlName="last_name"
+        id="lastName"
+        name="lastName"
+        placeholder="Фамилия"
+        type="text"
+      />
+
+      <input
+        class="signin-form__input"
+        formControlName="email"
+        id="email"
+        name="email"
+        placeholder="Почта"
+        type="text"
+      />
+
+      <input
+        class="signin-form__input"
+        formControlName="password"
+        id="password"
+        name="password"
+        placeholder="Пароль"
+        type="password"
+      />
+
+      <button
+        class="
+          signin-form__button
+          hover:bg-blue-400 hover:text-gray-800
+          focus:outline-none
+          my-1
+        "
+        type="submit"
+      >
+        Создать аккаунт
+      </button>
+
+      <div class="signin-form__warning text-sm text-gray-400 mt-4">
+        Создавая аккаунт вы соглашетесь с нашей
+        <a
+          class="no-underline border-b border-grey-dark text-gray-400"
+          href="#"
+        >
+          Политикой в отношении обработки персональных данных
+        </a>
+      </div>
+    </form>
+  </div>
+
+  <div class="signin-form__warning">
+    Уже создавали аккаунт раньше?
+    <a
+      class="no-underline border-b border-blue hover:text-blue-400"
+      routerLink="/auth/login"
+    >
+      Войти
+    </a>
+  </div>
+</div>

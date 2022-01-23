@@ -11,9 +11,6 @@ class Survey(models.Model):
         (OPEN, 'Open'),
     ]
     title = models.CharField(max_length=300)
-    slug = models.SlugField(max_length=200,
-                            unique=True,
-                            )  # to prepopulate: ModelAdmin.prepopulated_fields
     header_image = models.ImageField(upload_to='headers',
                                      null=True,
                                      blank=True)
@@ -33,8 +30,7 @@ class Survey(models.Model):
 
 class Block(models.Model):
     survey = models.ForeignKey(Survey,
-                               on_delete=models.CASCADE,
-                               )
+                               on_delete=models.CASCADE)
     picture = models.ImageField(upload_to='blocks')
 
 
@@ -42,13 +38,17 @@ class Question(models.Model):
     text = models.TextField()
     survey = models.ForeignKey(Survey,
                                related_name='questions',
-                               editable=False,
                                on_delete=models.CASCADE,
                                )
     block = models.ForeignKey(Block,
+                              blank=True,
+                              null=True,
                               on_delete=models.DO_NOTHING)
-    position = models.IntegerField()
-    picture = models.ImageField(upload_to='questions')
+    position = models.IntegerField(blank=True,
+                                   null=True)
+    picture = models.ImageField(upload_to='questions',
+                                blank=True,
+                                null=True)
 
 
 class Option(models.Model):
@@ -59,7 +59,10 @@ class Option(models.Model):
     text = models.CharField(max_length=2000,
                             blank=True,
                             null=True)
-    picture = models.ImageField(upload_to='options')
+    picture = models.ImageField(upload_to='options',
+                                blank=True,
+                                null=True)
+    code = models.IntegerField()
 
 
 class Response(models.Model):
@@ -72,7 +75,13 @@ class Response(models.Model):
 
 class Answer(models.Model):
     response = models.ForeignKey(Response,
-                                 on_delete=models.CASCADE,
-                                 )
+                                 on_delete=models.CASCADE)
     question = models.ForeignKey(Question,
                                  on_delete=models.CASCADE)
+
+
+class SingleChoiseAnswer(Answer):
+    selected_option = models.ForeignKey(Option,
+                                        on_delete=models.CASCADE,
+                                        blank=True,
+                                        null=True)

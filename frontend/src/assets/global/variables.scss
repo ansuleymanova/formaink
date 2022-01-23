@@ -1,0 +1,29 @@
+$xs: '(max-width: 767px)';
+$sm: '(min-width: 768px) and (max-width: 1023px)';
+$md: '(min-width: 1024px) and (max-width: 1279px)';
+$lg: '(min-width: 1280px) and (max-width: 1439px)';
+$xl: '(min-width: 1440px) and (max-width: 5000px)';
+
+//MAX
+$max-sm: '(max-width: 767px)';
+$max-md: '(max-width: 1023px)';
+$max-lg: '(max-width: 1279px)';
+$max-xl: '(max-width: 1439px)';
+
+//MIN
+$min-xs: '(min-width: 768px)';
+$min-sm: '(min-width: 1024px)';
+$min-md: '(min-width: 1280px)';
+$min-lg: '(min-width: 1440px)';
+$min-wide: '(min-width: 1696px)';
+
+//COLORS
+$ivory-1: #f2f2ed;
+$ivory-2: #e9eaeb;
+$p-green: #87998e;
+$p-gray: #b5b8bb;
+$p-blue: #5e81a0;
+$pd-violet: #917eaa;
+$pl-violet: #dabce1;
+$violet: rgba(123, 97, 255, 1);
+$navy: rgba(33, 33, 50, 1);

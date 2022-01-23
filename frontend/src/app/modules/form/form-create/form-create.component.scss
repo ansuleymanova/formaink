@@ -1,0 +1,72 @@
+@import '../../../../styles';
+
+.create-form__container {
+  padding: 24px;
+}
+
+.create-form {
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border: 1px solid #212221;
+  width: 375px;
+}
+
+.create-form__header {
+  font-family: $mnt;
+  font-size: 18px;
+}
+
+.create-form__content {
+  display: flex;
+  flex-direction: column;
+  font-family: $pt;
+  gap: 8px;
+}
+
+.create-form__input {
+  width: 100%;
+  background-color: $ivory-1;
+  font-family: $pt;
+  font-size: 20px;
+  border: none;
+  outline: 1px solid #212221;
+  border-radius: 2px;
+  color: $navy;
+  margin-bottom: 10px;
+  padding: 8px;
+
+  &:active,
+  &:hover {
+    outline: 2px solid #212221;
+  }
+
+  ::placeholder {
+    color: #9ca3ad;
+  }
+}
+
+.create-form__button {
+  margin-top: 1rem;
+  background-color: $ivory-1;
+  color: $navy;
+  text-align: center;
+  font-family: $mnt;
+  font-weight: 500;
+  font-size: 20px;
+  width: 100%;
+  padding: 8px;
+  border: solid 1px $navy;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:hover {
+    border-collapse: collapse;
+    border: solid 1px $navy;
+    transition: all 0.01s ease-in;
+    box-shadow: inset 0 0 0 22px black;
+    opacity: 1;
+    color: $ivory-1;
+  }
+}

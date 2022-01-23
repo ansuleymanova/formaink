@@ -1,0 +1,39 @@
+<div class="create-form__container">
+  <div class="create-form">
+    <h1 class="create-form__header">Create a form</h1>
+    <form
+      class="d-flex create-form__content"
+      [formGroup]="form"
+      (ngSubmit)="createForm()"
+    >
+      <input
+        type="text"
+        id="title"
+        formControlName="title"
+        class="create-form__input"
+        name="email"
+        placeholder="Название"
+      />
+
+      <input
+        type="text"
+        id="slug"
+        formControlName="slug"
+        class="create-form__input"
+        name="slug"
+        placeholder="slug"
+      />
+
+      <input
+        type="text"
+        id="description"
+        formControlName="description"
+        class="create-form__input"
+        name="description"
+        placeholder="description"
+      />
+
+      <button type="submit" class="create-form__button">Create</button>
+    </form>
+  </div>
+</div>
